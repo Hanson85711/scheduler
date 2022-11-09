@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import InterviewerList from "components/InterviewerList";
 import Button from "components/Button";
+import useVisualMode from "hooks/useVisualMode";
 
 export default function Form(props) {
   const [student, setStudent] = useState(props.student || "");
@@ -14,6 +15,10 @@ export default function Form(props) {
   function cancel() { 
     reset()
     props.onCancel();
+  }
+
+  function save() {
+    props.onSave(student, interviewer);
   }
 
   return (
@@ -38,7 +43,7 @@ export default function Form(props) {
       <section className="appointment__card-right">
         <section className="appointment__actions">
           <Button danger onClick={cancel}>Cancel</Button>
-          <Button confirm onClick={props.onSave}>Save</Button>
+          <Button confirm onClick={save}>Save</Button>
         </section>
       </section>
     </main>
