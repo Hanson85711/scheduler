@@ -1,6 +1,7 @@
 import React from "react";
 import useVisualMode from "hooks/useVisualMode";
 
+//Button component for adding new appointment
 export default function Empty(props) {
   return (
     <main className="appointment__add">

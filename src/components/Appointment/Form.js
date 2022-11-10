@@ -18,6 +18,7 @@ export default function Form(props) {
     props.onCancel();
   }
 
+  //Function that prevents user from saving if no interviewer is selected or name value is present
   function validate() {
     if (student === "") {
       setError("Student name cannot be blank");
